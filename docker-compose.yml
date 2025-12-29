@@ -10,7 +10,7 @@ services:
      test: curl -f http://localhost:8123/ || exit 1
     network_mode: host
     volumes:
-      - /volume1/docker/homeassistant:/config:rw
+      - /volume1/docker/homeautomation/homeassistant/config:/config:rw
     environment:
       TZ: America/Toronto
     restart: on-failure:5
@@ -27,7 +27,7 @@ services:
       - WHISPER_BEAM=1 #optional
       - WHISPER_LANG=en #optional
     volumes:
-      - /volume1/docker/whisper/data:/config
+      - /volume1/docker/homeautomation/whisper/config:/config
     ports:
       - 10300:10300 # Expose Wyoming protocol port
     restart: unless-stopped
@@ -47,7 +47,7 @@ services:
       - PIPER_SPEAKER=0 #optional
       - NO_STREAMING= #optional
     volumes:
-      -  /volume1/docker/piper/data:/config
+      -  /volume1/docker/homeautomation/piper/config:/config
     ports:
       - 10200:10200 # Expose Wyoming protocol port
     restart: unless-stopped
