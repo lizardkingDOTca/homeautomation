@@ -1,7 +1,7 @@
 services:
   homeassistant:
     image: homeassistant/home-assistant
-    container_name: Home-Assistant
+    container_name: homeautomation-ha
     mem_limit: 8g
     cpu_shares: 768
     security_opt:
@@ -17,7 +17,7 @@ services:
 
   whisper:
     image: lscr.io/linuxserver/faster-whisper:latest
-    container_name: whisper
+    container_name: homeautomation-whisper
     environment:
       - PUID=1000
       - PGID=1000
@@ -34,7 +34,7 @@ services:
 
   piper:
     image: lscr.io/linuxserver/piper:latest
-    container_name: piper
+    container_name: homeautomation-piper
     environment:
       - PUID=1000
       - PGID=1000
