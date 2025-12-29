@@ -13,8 +13,6 @@ services:
       - /volume1/docker/homeautomation/homeassistant/config:/config:rw
     env_file: 
       - ./.stack.env
-    env_file: 
-      - ./.stack.env
     restart: on-failure:5
 
   whisper:
