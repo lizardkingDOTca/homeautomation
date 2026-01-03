@@ -22,8 +22,6 @@ services:
       - ./.stack.env
       - ./.user.env
       - ./.whisper.env
-    environment:
-      - LOCAL_ONLY= #optional
     volumes:
       - /volume1/docker/homeautomation/whisper/config:/config
     ports:
@@ -36,14 +34,7 @@ services:
     env_file: 
       - ./.stack.env
       - ./.user.env
-    environment:
-      - PIPER_VOICE=en_US-lessac-medium
-      - LOCAL_ONLY= #optional
-      - PIPER_LENGTH=1.0 #optional
-      - PIPER_NOISE=0.667 #optional
-      - PIPER_NOISEW=0.333 #optional
-      - PIPER_SPEAKER=0 #optional
-      - NO_STREAMING= #optional
+      - ./.piper.env
     volumes:
       -  /volume1/docker/homeautomation/piper/config:/config
     ports:
