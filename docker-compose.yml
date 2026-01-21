@@ -16,7 +16,7 @@ services:
     restart: on-failure:5
 
   whisper:
-    image: lscr.io/linuxserver/faster-whisper:latest
+    image: linuxserver/faster-whisper:latest
     container_name: homeautomation-whisper
     env_file: 
       - ./.stack.env
@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
 
   piper:
-    image: lscr.io/linuxserver/piper:latest
+    image: linuxserver/piper:latest
     container_name: homeautomation-piper
     env_file: 
       - ./.stack.env
